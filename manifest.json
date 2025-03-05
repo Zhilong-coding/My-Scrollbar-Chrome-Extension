@@ -1,0 +1,25 @@
+{
+  "name": "My Scrollbar Extensions",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "WAH.png"
+  },
+  "permissions": ["activeTab"],
+  "background": {
+    "service_worker": "scripts/inject.js"
+  },
+  "content_scripts": [
+    {
+      "css": ["styles/myscrollbar.css"],
+      "scripts": ["scripts/content.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ]
+}
